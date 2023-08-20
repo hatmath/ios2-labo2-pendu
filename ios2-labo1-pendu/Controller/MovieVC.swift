@@ -8,7 +8,7 @@
 import UIKit
 
 
-class MovieController: UIViewController {
+class MovieVC: UIViewController {
 
     @IBOutlet weak var txtFieldUneLettre: UITextField!
     @IBOutlet weak var txtFieldLesLettres: UITextField!

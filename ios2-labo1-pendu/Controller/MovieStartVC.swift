@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MovieStartController: UIViewController {
+class MovieStartVC: UIViewController {
 
     
     @IBAction func unwindToStart(unwindSegue: UIStoryboardSegue) {}

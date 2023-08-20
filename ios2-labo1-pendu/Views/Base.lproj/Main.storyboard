@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OOD-Rg-VLg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XbM-54-Flc">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
@@ -11,7 +11,7 @@
         <!--MovieView-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="MovieView" id="BYZ-38-t0r" customClass="MovieController" customModule="ios2_labo1_pendu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="MovieView" id="BYZ-38-t0r" customClass="MovieVC" customModule="ios2_labo1_pendu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -127,7 +127,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="pushRejouer:" destination="BYZ-38-t0r" eventType="touchDown" id="e3Y-Qe-yda"/>
-                                    <segue destination="GVy-hX-gZF" kind="presentation" id="jub-DR-oIR"/>
+                                    <segue destination="GVy-hX-gZF" kind="presentation" id="Guv-5j-pcX"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BRAVO !!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZdP-OT-Oxd">
@@ -138,7 +138,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.84258943796157837" green="0.5128056027329374" blue="0.83375396702980142" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor"/>
                         <constraints>
                             <constraint firstItem="ZdP-OT-Oxd" firstAttribute="centerX" secondItem="3Gj-gq-0Nj" secondAttribute="centerX" id="0RV-jK-Tdd"/>
                             <constraint firstItem="3Gj-gq-0Nj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2Vt-2h-Xjs"/>
@@ -157,7 +157,9 @@
                             <constraint firstItem="2BN-uw-kBY" firstAttribute="top" secondItem="Xts-Qf-MRk" secondAttribute="bottom" constant="30" id="wUa-Qn-KB7"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="GKp-Tf-UW3"/>
+                    <navigationItem key="navigationItem" id="GKp-Tf-UW3">
+                        <barButtonItem key="backBarButtonItem" title="Jeux" id="2l6-r1-RNV"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="btnRejouer" destination="3Gj-gq-0Nj" id="ql4-9Q-2PM"/>
                         <outlet property="btnValider" destination="Qei-Xb-aSp" id="wj1-3k-yGj"/>
@@ -176,16 +178,30 @@
         <!--MovieEndView-->
         <scene sceneID="wSv-Fr-pix">
             <objects>
-                <viewController title="MovieEndView" id="GVy-hX-gZF" customClass="MovieEndController" customModule="ios2_labo1_pendu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="MovieEndView" id="GVy-hX-gZF" customClass="MovieEndVC" customModule="ios2_labo1_pendu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HBn-zm-B8f">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bravo! / Perdu View" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pn0-yE-Vew">
+                                <rect key="frame" x="8" y="8" width="377" height="826"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="wWo-Z2-CIq"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="1" green="0.59743775057301962" blue="0.54836115503055027" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="wWo-Z2-CIq" firstAttribute="trailing" secondItem="pn0-yE-Vew" secondAttribute="trailing" constant="8" id="5H6-Kn-w8w"/>
+                            <constraint firstItem="pn0-yE-Vew" firstAttribute="top" secondItem="wWo-Z2-CIq" secondAttribute="top" constant="8" id="GX2-Ne-o8D"/>
+                            <constraint firstItem="pn0-yE-Vew" firstAttribute="leading" secondItem="wWo-Z2-CIq" secondAttribute="leading" constant="8" id="M3W-Vd-qyZ"/>
+                            <constraint firstItem="wWo-Z2-CIq" firstAttribute="bottom" secondItem="pn0-yE-Vew" secondAttribute="bottom" constant="8" id="e0J-II-naJ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="pmm-r0-gwM"/>
                     <connections>
-                        <segue destination="PUm-Y7-bdh" kind="unwind" identifier="unwindToStart" unwindAction="unwindToStartWithUnwindSegue:" id="pD1-N9-UkG"/>
+                        <segue destination="PUm-Y7-bdh" kind="unwind" identifier="unwindToStart" unwindAction="unwindToStartWithUnwindSegue:" id="OEo-xK-mXF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GLe-k7-fxK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -193,10 +209,29 @@
             </objects>
             <point key="canvasLocation" x="1082" y="-680"/>
         </scene>
+        <!--HomeTabBar-->
+        <scene sceneID="6pm-6N-EkG">
+            <objects>
+                <tabBarController title="HomeTabBar" id="XbM-54-Flc" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ub7-c3-r9K">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="xcU-Yi-9ga" kind="relationship" relationship="viewControllers" id="DTm-hS-ga8"/>
+                        <segue destination="OOD-Rg-VLg" kind="relationship" relationship="viewControllers" id="fwR-fH-rN4"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nbH-I8-PBu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1953" y="-377"/>
+        </scene>
         <!--MovieNavView-->
         <scene sceneID="VxH-Vc-5mP">
             <objects>
                 <navigationController title="MovieNavView" id="OOD-Rg-VLg" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="bfc-ns-dDD"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3nK-Fo-Unc">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -209,22 +244,69 @@
             </objects>
             <point key="canvasLocation" x="-996" y="-679"/>
         </scene>
+        <!--WordNavView-->
+        <scene sceneID="edF-ew-dHl">
+            <objects>
+                <navigationController title="WordNavView" id="xcU-Yi-9ga" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="H4m-rW-jci"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QN5-to-eLr">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="s39-lq-FQW" kind="relationship" relationship="rootViewController" id="QvS-MS-mSR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="feV-lV-Fdc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-996" y="18"/>
+        </scene>
+        <!--WordView-->
+        <scene sceneID="1lI-Eb-AKe">
+            <objects>
+                <viewController title="WordView" id="s39-lq-FQW" customClass="WordVC" customModule="ios2_labo1_pendu" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7nx-6T-Lub">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Word Mode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Idb-ei-0Rj">
+                                <rect key="frame" x="8" y="111" width="377" height="650"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="u3r-QO-Tev"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <constraints>
+                            <constraint firstItem="u3r-QO-Tev" firstAttribute="bottom" secondItem="Idb-ei-0Rj" secondAttribute="bottom" constant="8" id="70k-Gi-V1q"/>
+                            <constraint firstItem="Idb-ei-0Rj" firstAttribute="leading" secondItem="u3r-QO-Tev" secondAttribute="leading" constant="8" id="dWH-Qv-Tso"/>
+                            <constraint firstItem="Idb-ei-0Rj" firstAttribute="top" secondItem="u3r-QO-Tev" secondAttribute="top" constant="8" id="iMG-PK-itp"/>
+                            <constraint firstItem="u3r-QO-Tev" firstAttribute="trailing" secondItem="Idb-ei-0Rj" secondAttribute="trailing" constant="8" id="lst-9R-sEH"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="awC-cI-dpW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aTB-8l-AXF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-291" y="18"/>
+        </scene>
         <!--MovieStartView-->
         <scene sceneID="f8Z-vA-31F">
             <objects>
-                <viewController title="MovieStartView" id="TYI-Ha-BrD" customClass="MovieStartController" customModule="ios2_labo1_pendu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="MovieStartView" id="TYI-Ha-BrD" customClass="MovieStartVC" customModule="ios2_labo1_pendu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3iK-HR-EyV">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aide View: (année, realisateur, genre,...)" textAlignment="center" lineBreakMode="clip" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBM-oM-spo">
-                                <rect key="frame" x="8" y="111" width="377" height="599"/>
+                                <rect key="frame" x="8" y="111" width="377" height="500"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pw-Na-Cyx">
-                                <rect key="frame" x="50" y="718" width="293" height="50"/>
+                                <rect key="frame" x="50" y="619" width="293" height="50"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Oq0-LC-F9e"/>
@@ -240,11 +322,11 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pAq-qc-yWa"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
                         <constraints>
+                            <constraint firstItem="pAq-qc-yWa" firstAttribute="bottom" secondItem="6pw-Na-Cyx" secondAttribute="bottom" constant="100" id="3Wq-d2-W1e"/>
                             <constraint firstItem="6pw-Na-Cyx" firstAttribute="top" secondItem="FBM-oM-spo" secondAttribute="bottom" constant="8" id="AnQ-jJ-YMK"/>
                             <constraint firstItem="6pw-Na-Cyx" firstAttribute="leading" secondItem="pAq-qc-yWa" secondAttribute="leading" constant="50" id="BHP-7q-riI"/>
-                            <constraint firstItem="pAq-qc-yWa" firstAttribute="bottom" secondItem="6pw-Na-Cyx" secondAttribute="bottom" constant="50" id="Fhb-ci-knK"/>
                             <constraint firstItem="FBM-oM-spo" firstAttribute="top" secondItem="pAq-qc-yWa" secondAttribute="top" constant="8" id="HfB-64-56m"/>
                             <constraint firstItem="FBM-oM-spo" firstAttribute="leading" secondItem="pAq-qc-yWa" secondAttribute="leading" constant="8" id="Vhs-x9-m9g"/>
                             <constraint firstItem="pAq-qc-yWa" firstAttribute="trailing" secondItem="FBM-oM-spo" secondAttribute="trailing" constant="8" id="oPR-Fd-l4o"/>
@@ -265,14 +347,14 @@
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
