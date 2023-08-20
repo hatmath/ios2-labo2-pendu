@@ -8,7 +8,7 @@
 import UIKit
 
 
-class ViewController: UIViewController {
+class MovieController: UIViewController {
 
     @IBOutlet weak var txtFieldUneLettre: UITextField!
     @IBOutlet weak var txtFieldLesLettres: UITextField!
@@ -33,9 +33,27 @@ class ViewController: UIViewController {
         imgViewPendu.image = UIImage(named: "0_echafaud")
         
         fetchRandomMovieTitle()
+        print ("MovieView will appear")
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print ("MovieView will appear")
 
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print ("MovieView did appear")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        print ("MovieView will disappear")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        print ("MovieView did disappear")
+    }
+    
     func fetchRandomMovieTitle() {
         movieDownloader.fetchRandomMovie { result in
             switch result {
