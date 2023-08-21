@@ -1,6 +1,6 @@
 //
-//  GameOne.swift
-//  ios2-labo1-pendu
+//  HangmanGame.swift
+//  ios2-labo2-pendu
 //
 //  Created by Simon Turcotte (2395412) et Mathieu Hatin (2296939)
 //
@@ -65,7 +65,7 @@ class HangmanGame {
           case 5:
             return
                 """
-                Indices:
+                Indices                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          :
                 Réalisateur(s): \(aMovie.Director)
                 Acteur(s): \(aMovie.Actors)
                 """

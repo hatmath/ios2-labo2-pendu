@@ -1,8 +1,8 @@
 //
-//  Menu ViewController.swift
-//  navigation_et_cycles_de_vie_des_vues
+//  MovieStartVC.swift
+//  ios2-labo2-pendu
 //
-//  Created by Mathieu Hatin (Étudiant) on 2023-08-19.
+//  Created by Simon Turcotte (2395412) et Mathieu Hatin (2296939)
 //
 
 import UIKit
