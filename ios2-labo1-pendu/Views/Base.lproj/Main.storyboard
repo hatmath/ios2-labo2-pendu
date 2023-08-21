@@ -221,6 +221,7 @@
                     <connections>
                         <segue destination="xcU-Yi-9ga" kind="relationship" relationship="viewControllers" id="DTm-hS-ga8"/>
                         <segue destination="OOD-Rg-VLg" kind="relationship" relationship="viewControllers" id="fwR-fH-rN4"/>
+                        <segue destination="LA4-aQ-pXa" kind="relationship" relationship="viewControllers" id="fOB-OX-lU3"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nbH-I8-PBu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -243,6 +244,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Khh-g6-mmx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-996" y="-679"/>
+        </scene>
+        <!--DashboardView-->
+        <scene sceneID="akg-zG-1Lw">
+            <objects>
+                <viewController title="DashboardView" id="LA4-aQ-pXa" customClass="DashboardVC" customModule="ios2_labo1_pendu" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KS8-mL-I5b">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="scores" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAw-tu-QXR">
+                                <rect key="frame" x="8" y="67" width="377" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="rJQ-rU-KOf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="préférences" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWU-3h-eOm">
+                                <rect key="frame" x="8" y="375" width="376" height="386"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cBa-Zf-iDC"/>
+                        <color key="backgroundColor" red="0.84258943796157837" green="0.56718046449277915" blue="0.75914129877576231" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="RWU-3h-eOm" firstAttribute="top" secondItem="vAw-tu-QXR" secondAttribute="bottom" constant="8" id="9k5-EC-ctF"/>
+                            <constraint firstItem="vAw-tu-QXR" firstAttribute="leading" secondItem="cBa-Zf-iDC" secondAttribute="leading" constant="8" id="FyA-fa-iey"/>
+                            <constraint firstItem="cBa-Zf-iDC" firstAttribute="bottom" secondItem="RWU-3h-eOm" secondAttribute="bottom" constant="8" id="PUo-rF-IXG"/>
+                            <constraint firstItem="cBa-Zf-iDC" firstAttribute="trailing" secondItem="vAw-tu-QXR" secondAttribute="trailing" constant="8" id="Rmk-Zt-Be4"/>
+                            <constraint firstItem="vAw-tu-QXR" firstAttribute="top" secondItem="cBa-Zf-iDC" secondAttribute="top" constant="8" id="fz2-iQ-9D4"/>
+                            <constraint firstItem="cBa-Zf-iDC" firstAttribute="trailing" secondItem="RWU-3h-eOm" secondAttribute="trailing" constant="9" id="iJV-UI-HzA"/>
+                            <constraint firstItem="RWU-3h-eOm" firstAttribute="leading" secondItem="cBa-Zf-iDC" secondAttribute="leading" constant="8" id="tlf-d0-jMH"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="qPv-pf-1Xt"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xys-Kj-L8n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1953" y="348"/>
         </scene>
         <!--WordNavView-->
         <scene sceneID="edF-ew-dHl">
