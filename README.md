@@ -1,7 +1,7 @@
 
 # BUG À CORRIGER AVANT LA REMISE
 
-	- Ne pas tenir copte des espaces
+	- Ne pas tenir compte des espaces
 	- Quand le mot est trouvé c'est un succès sinon un échec présentement aucune action conséquente n'est prise
 
 # ENTÊTE
@@ -56,12 +56,14 @@
 	
 	Navigation : <image dans pdf>
 
-    BARÈME
+    	BARÈME
 	Important : Vous n’êtes pas obligé de dessiner le pendu dans votre app, vous pouvez simplement afficher un compteur d’erreurs (0/6, 1/6, etc.).
-	Voici le barème approximatif :
-	Barème 																							[%]
-	Mode de jeu « Mot du dictionnaire »																30
-	Mode de jeu « Titre de films »																	30
-	Mode administrateur (faire « Score » avec « User Default », « Préférences » est un mock)		15
-	Respect du modèle MVC																			10
-	Qualités du code et de la app																	15
+	
+ 	Voici le barème approximatif :
+ 
+	Barème 															[%]
+	Mode de jeu « Mot du dictionnaire »											30
+	Mode de jeu « Titre de films »												30
+	Mode administrateur (faire « Score » avec « User Default », « Préférences » est un mock)				15
+	Respect du modèle MVC													10
+	Qualités du code et de la app												15
