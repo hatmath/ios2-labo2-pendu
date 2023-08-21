@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -216,7 +217,9 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ub7-c3-r9K">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" systemColor="systemPurpleColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="xcU-Yi-9ga" kind="relationship" relationship="viewControllers" id="DTm-hS-ga8"/>
@@ -232,7 +235,9 @@
         <scene sceneID="VxH-Vc-5mP">
             <objects>
                 <navigationController title="MovieNavView" id="OOD-Rg-VLg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="bfc-ns-dDD"/>
+                    <tabBarItem key="tabBarItem" title="Film" id="bfc-ns-dDD">
+                        <imageReference key="image" image="popcorn" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3nK-Fo-Unc">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -281,7 +286,7 @@
                             <constraint firstItem="RWU-3h-eOm" firstAttribute="leading" secondItem="cBa-Zf-iDC" secondAttribute="leading" constant="8" id="tlf-d0-jMH"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="qPv-pf-1Xt"/>
+                    <tabBarItem key="tabBarItem" title="stats" image="percent" catalog="system" id="qPv-pf-1Xt"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xys-Kj-L8n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -291,7 +296,9 @@
         <scene sceneID="edF-ew-dHl">
             <objects>
                 <navigationController title="WordNavView" id="xcU-Yi-9ga" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="H4m-rW-jci"/>
+                    <tabBarItem key="tabBarItem" title="Dictionnaire" id="H4m-rW-jci">
+                        <imageReference key="image" image="text.book.closed" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QN5-to-eLr">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -387,6 +394,9 @@
     </scenes>
     <resources>
         <image name="0_echafaud" width="819" height="460"/>
+        <image name="percent" catalog="system" width="128" height="121"/>
+        <image name="popcorn" catalog="system" width="102" height="128"/>
+        <image name="text.book.closed" catalog="system" width="115" height="128"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
@@ -395,6 +405,9 @@
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
