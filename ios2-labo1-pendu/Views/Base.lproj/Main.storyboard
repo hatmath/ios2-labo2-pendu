@@ -12,7 +12,7 @@
         <!--MovieView-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="MovieView" id="BYZ-38-t0r" customClass="MovieVC" customModule="ios2_labo1_pendu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MovieVC" title="MovieView" id="BYZ-38-t0r" customClass="MovieVC" customModule="ios2_labo1_pendu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -369,6 +369,7 @@
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="btnStart:" destination="TYI-Ha-BrD" eventType="touchUpInside" id="1tg-AQ-LVi"/>
                                     <segue destination="BYZ-38-t0r" kind="show" id="W3g-JX-A1m"/>
                                 </connections>
                             </button>

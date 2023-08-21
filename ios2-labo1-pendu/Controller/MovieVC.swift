@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 class MovieVC: UIViewController {
 
     @IBOutlet weak var txtFieldUneLettre: UITextField!
@@ -19,11 +18,13 @@ class MovieVC: UIViewController {
     @IBOutlet weak var btnRejouer: UIButton!
     @IBOutlet weak var lblBravo: UILabel!
     
-    var hangmanGame: HangmanGame!
+    var hangmanGameCopy: HangmanGame!
     var movieDownloader = MovieDownloader.shared
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print ("MovieView will appear")
+        
         // Do any additional setup after loading the view.
         txtFieldUneLettre.text = ""
         txtFieldLesLettres.text = ""
@@ -31,10 +32,7 @@ class MovieVC: UIViewController {
         btnRejouer.isHidden = false
         lblBravo.text = ""
         imgViewPendu.image = UIImage(named: "0_echafaud")
-        
-        fetchRandomMovieTitle()
-        print ("MovieView will appear")
-        
+        lblDevinette.text = hangmanGameCopy.getGuessedWord()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,46 +50,31 @@ class MovieVC: UIViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         print ("MovieView did disappear")
-    }
-    
-    func fetchRandomMovieTitle() {
-        movieDownloader.fetchRandomMovie { result in
-            switch result {
-            case .success(let movie):
-                DispatchQueue.main.async {
-                    self.hangmanGame = HangmanGame(word: movie.Title.uppercased())
-                    self.lblDevinette.text = self.hangmanGame.getGuessedWord()
-                }
-            case .failure(let error):
-                print("Error fetching movie title: \(error)")
-                // Handle error if needed
-            }
-        }
-    }
+    }    
 
     @IBAction func pushValider(_ sender: Any) {
         
-        if hangmanGame.getIncorrectGuessCount() < hangmanGame.getNumberOfGuess() {
+        if hangmanGameCopy.getIncorrectGuessCount() < hangmanGameCopy.getNumberOfGuess() {
             if let letter = txtFieldUneLettre.text?.first {
 
                 // Make a guess using the HangmanGame instance
-                hangmanGame.makeGuess(letter: letter)
+                hangmanGameCopy.makeGuess(letter: letter)
 
-                imgViewPendu.image = UIImage(named: hangmanGame.getCurrentImageName())!
+                imgViewPendu.image = UIImage(named: hangmanGameCopy.getCurrentImageName())!
                 
                 // Update UI elements
-                txtFieldLesLettres.text = hangmanGame.getSelectedLetters().sorted().map { String($0) }.joined(separator: ", ")
-                lblPointage.text = "Pointage: \(hangmanGame.getIncorrectGuessCount())/\(hangmanGame.getNumberOfGuess() )"
-                lblDevinette.text = hangmanGame.getGuessedWord()
+                txtFieldLesLettres.text = hangmanGameCopy.getSelectedLetters().sorted().map { String($0) }.joined(separator: ", ")
+                lblPointage.text = "Pointage: \(hangmanGameCopy.getIncorrectGuessCount())/\(hangmanGameCopy.getNumberOfGuess() )"
+                lblDevinette.text = hangmanGameCopy.getGuessedWord()
 
-                lblBravo.text = hangmanGame.getAHint(aMovie: movieDownloader.getCurrentMovie())
+                lblBravo.text = hangmanGameCopy.getAHint(aMovie: movieDownloader.getCurrentMovie())
                                                      
-                if hangmanGame.isWordGuessed() {
+                if hangmanGameCopy.isWordGuessed() {
                     // update UI
                     lblBravo.text = "BRAVO !!"
                 }
                 
-                if hangmanGame.isGameOver() {
+                if hangmanGameCopy.isGameOver() {
                     // Game over
                     btnRejouer.isHidden = false
                 }
@@ -104,4 +87,5 @@ class MovieVC: UIViewController {
     @IBAction func pushRejouer(_ sender: Any) {
         viewDidLoad()
     }
+    
 }

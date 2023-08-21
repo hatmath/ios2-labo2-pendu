@@ -15,7 +15,7 @@ class HangmanGame {
     private var incorrectGuessCount = 0
     private var selectedLetters: Set<Character> = []
     private var numberOfGuess = 7
-
+      
     init(word: String) {
         self.word = word.uppercased()
         self.guessedWord = Array(repeating: "_", count: word.count)
@@ -41,12 +41,11 @@ class HangmanGame {
     }
 
     func getAHint(aMovie: Movie) -> String {
-        
         switch self.getIncorrectGuessCount() {
           case 0:
             return "Aucun indice pour l'instant"
           case 1:
-            return "Aucun indice"
+            return "Un indice s'en vient"
           case 2:
             return
                 """
@@ -65,7 +64,7 @@ class HangmanGame {
           case 5:
             return
                 """
-                Indices                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          :
+                Indices
                 Réalisateur(s): \(aMovie.Director)
                 Acteur(s): \(aMovie.Actors)
                 """
@@ -76,7 +75,6 @@ class HangmanGame {
           default:
             return "Aucun indice"
         }
-        
     }
     
     func isWordGuessed() -> Bool {

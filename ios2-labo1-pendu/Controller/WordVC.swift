@@ -14,12 +14,10 @@ class WordVC: UIViewController {
 
         // Do any additional setup after loading the view.
         print("WordView did load")
-
     }
 
     override func viewWillAppear(_ animated: Bool) {
         print ("WordView will appear")
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -34,15 +32,4 @@ class WordVC: UIViewController {
         print ("WordView did disappear")
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
