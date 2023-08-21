@@ -11,7 +11,12 @@ struct Movie: Codable {
     var imdbID: String
     var Title: String
     var Year: String
+    var Rated: String
+    var Released: String
+    var Genre: String
     var Director : String
+    var Actors: String
+    
 }
 
 class MovieDownloader {
@@ -51,7 +56,11 @@ class MovieDownloader {
 
     private func printMovieInfo(_ movie: Movie) {
         print("Movie Title: \(movie.Title)")
-        print("Year: \(movie.Year)")
+        print("Year: \(movie.Year)")        
+        print("Rated: \(movie.Rated)")
+        print("Released: \(movie.Released)")
+        print("Genre: \(movie.Genre)")
         print("Director: \(movie.Director)")
+        print("Actors: \(movie.Actors)")
     }
 }
