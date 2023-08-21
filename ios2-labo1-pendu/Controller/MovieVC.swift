@@ -84,6 +84,8 @@ class MovieVC: UIViewController {
                 lblPointage.text = "Pointage: \(hangmanGame.getIncorrectGuessCount())/\(hangmanGame.getNumberOfGuess() )"
                 lblDevinette.text = hangmanGame.getGuessedWord()
 
+                lblBravo.text = hangmanGame.getAHint(aMovie: movieDownloader.getCurrentMovie())
+                                                     
                 if hangmanGame.isWordGuessed() {
                     // update UI
                     lblBravo.text = "BRAVO !!"

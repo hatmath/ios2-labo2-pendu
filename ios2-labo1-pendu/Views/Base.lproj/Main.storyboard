@@ -131,15 +131,15 @@
                                     <segue destination="GVy-hX-gZF" kind="presentation" id="Guv-5j-pcX"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BRAVO !!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZdP-OT-Oxd">
-                                <rect key="frame" x="136" y="674" width="121" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" systemColor="systemYellowColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BRAVO !!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZdP-OT-Oxd">
+                                <rect key="frame" x="8" y="660" width="377" height="101"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <color key="backgroundColor" red="1" green="0.98098803509999999" blue="0.46999931769999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="ZdP-OT-Oxd" firstAttribute="centerX" secondItem="3Gj-gq-0Nj" secondAttribute="centerX" id="0RV-jK-Tdd"/>
                             <constraint firstItem="3Gj-gq-0Nj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2Vt-2h-Xjs"/>
@@ -150,11 +150,13 @@
                             <constraint firstItem="Xts-Qf-MRk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YJF-7a-vWF"/>
                             <constraint firstItem="quN-7D-pms" firstAttribute="top" secondItem="2BN-uw-kBY" secondAttribute="bottom" constant="40" id="Yk6-i0-hSn"/>
                             <constraint firstItem="3Gj-gq-0Nj" firstAttribute="top" secondItem="JGI-Ew-fVK" secondAttribute="bottom" constant="30" id="Z85-cd-TCd"/>
-                            <constraint firstItem="ZdP-OT-Oxd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="136" id="ZEf-fe-oYt"/>
                             <constraint firstItem="JGI-Ew-fVK" firstAttribute="top" secondItem="Nc7-r6-gOM" secondAttribute="bottom" constant="36" id="hmS-oW-nXY"/>
                             <constraint firstItem="Nc7-r6-gOM" firstAttribute="top" secondItem="quN-7D-pms" secondAttribute="bottom" constant="36" id="i88-Ws-BAX"/>
+                            <constraint firstItem="ZdP-OT-Oxd" firstAttribute="top" secondItem="3Gj-gq-0Nj" secondAttribute="bottom" constant="8" id="nMT-3A-LZA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZdP-OT-Oxd" secondAttribute="trailing" constant="8" id="nT8-Au-IXQ"/>
                             <constraint firstItem="Xts-Qf-MRk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="omZ-1r-s3s"/>
-                            <constraint firstItem="ZdP-OT-Oxd" firstAttribute="top" secondItem="3Gj-gq-0Nj" secondAttribute="bottom" constant="22" id="sBx-XV-nZi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZdP-OT-Oxd" secondAttribute="bottom" constant="8" id="pk2-zD-zIv"/>
+                            <constraint firstItem="ZdP-OT-Oxd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="uXo-jP-TIM"/>
                             <constraint firstItem="2BN-uw-kBY" firstAttribute="top" secondItem="Xts-Qf-MRk" secondAttribute="bottom" constant="30" id="wUa-Qn-KB7"/>
                         </constraints>
                     </view>
@@ -411,9 +413,6 @@
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

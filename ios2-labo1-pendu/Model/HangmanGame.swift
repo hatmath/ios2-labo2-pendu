@@ -40,6 +40,45 @@ class HangmanGame {
         }
     }
 
+    func getAHint(aMovie: Movie) -> String {
+        
+        switch self.getIncorrectGuessCount() {
+          case 0:
+            return "Aucun indice pour l'instant"
+          case 1:
+            return "Aucun indice"
+          case 2:
+            return
+                """
+                Indice:
+                Année de production: \(aMovie.Released)
+                """
+          case 3:
+            return "Aucun indice pour l'instant"
+          case 4:
+            return
+                """
+                Indices:
+                Classé: \(aMovie.Rated)
+                Genre: \(aMovie.Genre)
+                """
+          case 5:
+            return
+                """
+                Indices:
+                Réalisateur(s): \(aMovie.Director)
+                Acteur(s): \(aMovie.Actors)
+                """
+          case 6:
+            return "Vous avez utilisé tout vos indices"
+          case 7:
+            return "Vous avez utilisé tout vos indices"
+          default:
+            return "Aucun indice"
+        }
+        
+    }
+    
     func isWordGuessed() -> Bool {
         return guessedWord == Array(word)
     }
@@ -63,7 +102,7 @@ class HangmanGame {
     func getSelectedLetters() -> Set<Character> {
         return selectedLetters
     }
-    
+         
     func getCurrentImageName() -> String {
         switch self.getIncorrectGuessCount() {
           case 0:

@@ -19,6 +19,8 @@ struct Movie: Codable {
     
 }
 
+private var currentMovie: Movie?
+
 class MovieDownloader {
     static let shared = MovieDownloader()
     private init() {}
@@ -39,9 +41,9 @@ class MovieDownloader {
                     if let data = data {
                         do {
                             let decoder = JSONDecoder()
-                            let movie = try decoder.decode(Movie.self, from: data)
-                            self.printMovieInfo(movie) // Print movie details to console
-                            completion(.success(movie))
+                            currentMovie = try decoder.decode(Movie.self, from: data)
+                            self.printMovieInfo(currentMovie!) // Print movie details to console
+                            completion(.success(currentMovie!))
                         } catch {
                             completion(.failure(error))
                         }
@@ -54,9 +56,13 @@ class MovieDownloader {
         }
     }
 
+    func getCurrentMovie() -> Movie {
+        return currentMovie!
+    }
+    
     private func printMovieInfo(_ movie: Movie) {
         print("Movie Title: \(movie.Title)")
-        print("Year: \(movie.Year)")        
+        print("Year: \(movie.Year)")
         print("Rated: \(movie.Rated)")
         print("Released: \(movie.Released)")
         print("Genre: \(movie.Genre)")
