@@ -18,7 +18,8 @@ class MovieVC: UIViewController {
     @IBOutlet weak var btnRejouer: UIButton!
     @IBOutlet weak var lblBravo: UILabel!
     
-    var hangmanGameCopy: HangmanGame!
+//    var hangmanGameCopy: HangmanGame!
+    var hangmanGame = HangmanGame.shared
     var movieDownloader = MovieDownloader.shared
 
     override func viewDidLoad() {
@@ -32,7 +33,7 @@ class MovieVC: UIViewController {
         btnRejouer.isHidden = false
         lblBravo.text = ""
         imgViewPendu.image = UIImage(named: "0_echafaud")
-        lblDevinette.text = hangmanGameCopy.getGuessedWord()
+        lblDevinette.text = hangmanGame.getGuessedWord()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,27 +55,27 @@ class MovieVC: UIViewController {
 
     @IBAction func pushValider(_ sender: Any) {
         
-        if hangmanGameCopy.getIncorrectGuessCount() < hangmanGameCopy.getNumberOfGuess() {
+        if hangmanGame.getIncorrectGuessCount() < hangmanGame.getNumberOfGuess() {
             if let letter = txtFieldUneLettre.text?.first {
 
                 // Make a guess using the HangmanGame instance
-                hangmanGameCopy.makeGuess(letter: letter)
+                hangmanGame.makeGuess(letter: letter)
 
-                imgViewPendu.image = UIImage(named: hangmanGameCopy.getCurrentImageName())!
+                imgViewPendu.image = UIImage(named: hangmanGame.getCurrentImageName())!
                 
                 // Update UI elements
-                txtFieldLesLettres.text = hangmanGameCopy.getSelectedLetters().sorted().map { String($0) }.joined(separator: ", ")
-                lblPointage.text = "Pointage: \(hangmanGameCopy.getIncorrectGuessCount())/\(hangmanGameCopy.getNumberOfGuess() )"
-                lblDevinette.text = hangmanGameCopy.getGuessedWord()
+                txtFieldLesLettres.text = hangmanGame.getSelectedLetters().sorted().map { String($0) }.joined(separator: ", ")
+                lblPointage.text = "Pointage: \(hangmanGame.getIncorrectGuessCount())/\(hangmanGame.getNumberOfGuess() )"
+                lblDevinette.text = hangmanGame.getGuessedWord()
 
-                lblBravo.text = hangmanGameCopy.getAHint(aMovie: movieDownloader.getCurrentMovie())
+                lblBravo.text = hangmanGame.getAHint(aMovie: movieDownloader.getCurrentMovie()!)
                                                      
-                if hangmanGameCopy.isWordGuessed() {
+                if hangmanGame.isWordGuessed() {
                     // update UI
                     lblBravo.text = "BRAVO !!"
                 }
                 
-                if hangmanGameCopy.isGameOver() {
+                if hangmanGame.isGameOver() {
                     // Game over
                     btnRejouer.isHidden = false
                 }

@@ -9,43 +9,48 @@ import UIKit
 
 class MovieStartVC: UIViewController {
 
-    var hangmanGame: HangmanGame!
-    var movieDownloader = MovieDownloader.shared
+    var hangmanGame = HangmanGame.shared
+    var movieDownloader = MovieDownloader.shared    
     
+    @IBOutlet weak var lblAide: UILabel!
+   
     @IBAction func unwindToStart(unwindSegue: UIStoryboardSegue) {}
     
-    func fetchRandomMovieTitle() {
-        movieDownloader.fetchRandomMovie { result in
-            switch result {
-            case .success(let movie):
-                DispatchQueue.main.async {
-                    self.hangmanGame = HangmanGame(word: movie.Title.uppercased())
-                }
-            case .failure(let error):
-                print("Error fetching movie title: \(error)")
-                // Handle error if needed
-            }
-        }
-    }
-    
-    @IBAction func btnStart(_ sender: Any) {
-        let controller = storyboard?.instantiateViewController(identifier: "MovieVC") as! MovieVC
-        controller.hangmanGameCopy = hangmanGame
-        controller.modalPresentationStyle = .fullScreen
-        present(controller, animated: true, completion: nil)
-    }
+    @IBAction func btnStart(_ sender: Any) {}
+    //Pour passer un objet d'une vue à une autre voici un exemple de code *conserver pour l'instant*
+    //
+    //@IBAction func btnStart(_ sender: Any) {
+    //    let controller = storyboard?.instantiateViewController(identifier: "MovieVC") as! MovieVC
+    //    controller.hangmanGame = hangmanGame
+    //    controller.modalPresentationStyle = .fullScreen
+    //    present(controller, animated: true, completion: nil)
+    //}
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         print("MovieStartView did load")
-        fetchRandomMovieTitle()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         print ("MovieStartView will appear")
 
+        hangmanGame.fetch(usingWordDownloader: false) { success in
+            if success {
+                // Success handling
+                DispatchQueue.main.async {
+                    if self.movieDownloader.getCurrentMovie() != nil {
+                        self.lblAide.text = "Aide: \n" + self.movieDownloader.toString(self.movieDownloader.getCurrentMovie()!)
+                    } else {
+                        self.lblAide.text = "ERREUR: movieDownloader.getCurrentMovie()"
+                    }
+                }
+            } else {
+                // Failure handling
+                DispatchQueue.main.async { self.lblAide.text = "ERREUR hangmanGame.fetch()" }
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -61,3 +66,4 @@ class MovieStartVC: UIViewController {
     }
 
 }
+

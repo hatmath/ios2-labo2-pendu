@@ -18,9 +18,8 @@ struct Movie: Codable {
     var Actors: String
 }
 
-private var currentMovie: Movie?
-
 class MovieDownloader {
+    private var currentMovie: Movie?
     static let shared = MovieDownloader()
     private init() {}
 
@@ -40,9 +39,9 @@ class MovieDownloader {
                     if let data = data {
                         do {
                             let decoder = JSONDecoder()
-                            currentMovie = try decoder.decode(Movie.self, from: data)
-                            self.printMovieInfo(currentMovie!) // Print movie details to console
-                            completion(.success(currentMovie!))
+                            self.currentMovie = try decoder.decode(Movie.self, from: data)
+                            self.printMovieInfo(self.currentMovie!) // Print movie details to console
+                            completion(.success(self.currentMovie!))
                         } catch {
                             completion(.failure(error))
                         }
@@ -55,8 +54,8 @@ class MovieDownloader {
         }
     }
 
-    func getCurrentMovie() -> Movie {
-        return currentMovie!
+    func getCurrentMovie() -> Movie? {
+        return self.currentMovie
     }
     
     func generateRandomTitleID() -> String? {
@@ -81,5 +80,17 @@ class MovieDownloader {
         print("Genre: \(movie.Genre)")
         print("Director: \(movie.Director)")
         print("Actors: \(movie.Actors)")
+    }
+    
+    func toString(_ movie: Movie) -> String {
+        return """
+        Movie Title: \(movie.Title)
+        Year: \(movie.Year)
+        Rated: \(movie.Rated)
+        Released: \(movie.Released)
+        Genre: \(movie.Genre)
+        Director: \(movie.Director)
+        Actors: \(movie.Actors)
+        """
     }
 }
