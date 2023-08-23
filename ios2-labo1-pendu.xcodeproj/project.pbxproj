@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8714168B2A965FF400DF775F /* UserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8714168A2A965FF400DF775F /* UserVC.swift */; };
 		8718FEA62A91B3680073EEE2 /* MovieStartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8718FEA52A91B3680073EEE2 /* MovieStartVC.swift */; };
 		8718FEA82A91BA1D0073EEE2 /* MovieEndVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8718FEA72A91BA1D0073EEE2 /* MovieEndVC.swift */; };
 		8718FEAA2A91CB660073EEE2 /* WordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8718FEA92A91CB660073EEE2 /* WordVC.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8714168A2A965FF400DF775F /* UserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserVC.swift; sourceTree = "<group>"; };
 		8718FEA52A91B3680073EEE2 /* MovieStartVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieStartVC.swift; sourceTree = "<group>"; };
 		8718FEA72A91BA1D0073EEE2 /* MovieEndVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieEndVC.swift; sourceTree = "<group>"; };
 		8718FEA92A91CB660073EEE2 /* WordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordVC.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				8718FEA72A91BA1D0073EEE2 /* MovieEndVC.swift */,
 				8718FEA92A91CB660073EEE2 /* WordVC.swift */,
 				874FD4272A939901009C091F /* DashboardVC.swift */,
+				8714168A2A965FF400DF775F /* UserVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				874EAB942A898CA900F5C4CC /* MovieList.swift in Sources */,
 				8718FEA62A91B3680073EEE2 /* MovieStartVC.swift in Sources */,
 				872A9F652A82B9FE00815AEB /* MovieVC.swift in Sources */,
+				8714168B2A965FF400DF775F /* UserVC.swift in Sources */,
 				872A9F612A82B9FE00815AEB /* AppDelegate.swift in Sources */,
 				8718FEAA2A91CB660073EEE2 /* WordVC.swift in Sources */,
 				8718FEA82A91BA1D0073EEE2 /* MovieEndVC.swift in Sources */,
