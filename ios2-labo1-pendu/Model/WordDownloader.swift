@@ -8,6 +8,7 @@
 import Foundation
 
 class WordDownloader {
+    private var currentWord : String?
     static let shared = WordDownloader()
     private init() {}
 
@@ -44,4 +45,9 @@ class WordDownloader {
     private func printReceivedWord(_ word: String) {
         print("Received word: \(word)")
     }
+    func getCurrentWord() -> String? {
+        return self.currentWord
+    }
+
+    
 }
