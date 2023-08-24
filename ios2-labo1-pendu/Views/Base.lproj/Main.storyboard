@@ -181,7 +181,7 @@
         <!--GameEndView-->
         <scene sceneID="wSv-Fr-pix">
             <objects>
-                <viewController title="GameEndView" id="GVy-hX-gZF" customClass="GameEndVC" customModule="ios2_labo1_pendu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="storyboard_id_end" title="GameEndView" id="GVy-hX-gZF" customClass="GameEndVC" customModule="ios2_labo1_pendu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HBn-zm-B8f">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -20,8 +20,7 @@ class WordStartVC: UIViewController {
     
     @IBAction func btnStart(_ sender: Any) {
         let controller = storyboard?.instantiateViewController(identifier: "storyboard_Id_game") as! GameVC
-        controller.gameMode = 2
-        controller.modalPresentationStyle = .fullScreen
+         controller.modalPresentationStyle = .fullScreen
         present(controller, animated: true, completion: nil)
     }
     

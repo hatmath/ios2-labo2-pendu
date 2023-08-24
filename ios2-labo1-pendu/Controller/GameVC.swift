@@ -19,8 +19,7 @@ class GameVC: UIViewController {
     @IBOutlet weak var lblBravo: UILabel!
  
     var hangmanGame = HangmanGame.shared
-    var gameMode: Int?
-
+    var controller: UIViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +33,10 @@ class GameVC: UIViewController {
         lblBravo.text = ""
         imgViewPendu.image = UIImage(named: "0_echafaud")
         lblDevinette.text = hangmanGame.getGuessedWord()
+        
+        controller = storyboard?.instantiateViewController(identifier: "storyboard_id_end") as! GameEndVC
+        controller.modalPresentationStyle = .fullScreen
+       
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -69,15 +72,10 @@ class GameVC: UIViewController {
                 lblDevinette.text = hangmanGame.getGuessedWord()
                 lblBravo.text = hangmanGame.getAHint()
                                                                      
-                if hangmanGame.isWordGuessed() {
-                    // update UI
-                    lblBravo.text = "BRAVO !!"
-                }
-                
-                if hangmanGame.isGameOver() {
-                    // Game over
-                    btnRejouer.isHidden = false
-                }
+                 if hangmanGame.isGameOver() || hangmanGame.isWordGuessed() {
+                    print("test")
+                    present(controller, animated: true, completion: nil)
+                 }
             }
         }
 

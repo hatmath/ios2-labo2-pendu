@@ -56,6 +56,10 @@ class HangmanGame {
         }
     }
     
+    func isWordDownloaderMode() -> Bool? {
+        return usingWordDownloader
+    }
+    
     func makeGuess(letter: Character) {
         let uppercasedLetter = Character(letter.uppercased())
         guard !selectedLetters.contains(uppercasedLetter) else {

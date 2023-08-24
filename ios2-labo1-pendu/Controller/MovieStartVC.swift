@@ -20,7 +20,6 @@ class MovieStartVC: UIViewController {
     
     @IBAction func btnStart(_ sender: Any) {
         let controller = storyboard?.instantiateViewController(identifier: "storyboard_Id_game") as! GameVC
-        controller.gameMode = 1
         controller.modalPresentationStyle = .fullScreen
         present(controller, animated: true, completion: nil)
     }
