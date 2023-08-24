@@ -16,8 +16,10 @@ class GameVC: UIViewController {
     @IBOutlet weak var imgViewPendu: UIImageView!
     @IBOutlet weak var lblPointage: UILabel!
     @IBOutlet weak var btnRejouer: UIButton!
-    @IBOutlet weak var lblBravo: UILabel!
+//    @IBOutlet weak var lblBravo: UILabel!
  
+    @IBOutlet weak var lblMessage: UILabel!
+    
     var hangmanGame = HangmanGame.shared
     var controller: UIViewController!
 
@@ -30,7 +32,7 @@ class GameVC: UIViewController {
         txtFieldLesLettres.text = ""
         lblPointage.text = ""
         btnRejouer.isHidden = false
-        lblBravo.text = ""
+        lblMessage.text = ""
         imgViewPendu.image = UIImage(named: "0_echafaud")
         lblDevinette.text = hangmanGame.getGuessedWord()
         
@@ -70,7 +72,7 @@ class GameVC: UIViewController {
                 txtFieldLesLettres.text = hangmanGame.getSelectedLetters().sorted().map { String($0) }.joined(separator: ", ")
                 lblPointage.text = "Pointage: \(hangmanGame.getIncorrectGuessCount())/\(hangmanGame.getNumberOfGuess() )"
                 lblDevinette.text = hangmanGame.getGuessedWord()
-                lblBravo.text = hangmanGame.getAHint()
+                lblMessage.text = hangmanGame.getAHint()
                                                                      
                  if hangmanGame.isGameOver() || hangmanGame.isWordGuessed() {
                     print("test")
