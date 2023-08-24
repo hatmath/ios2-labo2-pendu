@@ -34,13 +34,14 @@ class GameEndVC: UIViewController {
                 pour sauvegarder votre score
                 """
             txtName.text = ""
+            btnHome.setTitle("ACCUEIL", for: .normal)
         } else {
             lblMessage.text = "Meilleure chance la prochaine fois"
             lblName.text = ""
             txtName.isHidden = true
+            btnHome.isHidden = true
         }
- 
-        btnHome.setTitle("ACCUEIL", for: .normal)
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
