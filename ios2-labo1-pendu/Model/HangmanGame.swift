@@ -20,7 +20,7 @@ class HangmanGame {
     
     func fetch(usingWordDownloader: Bool, completion: @escaping (Bool) -> Void) {
         if usingWordDownloader {
-            WordDownloader.shared.fetchRandoWord { result in
+            WordDownloader.shared.fetchRandomWord { result in
                 switch result {
                 case .success(let item):
                     self.word = item.uppercased()

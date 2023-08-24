@@ -13,7 +13,9 @@ class MovieStartVC: UIViewController {
     var movieDownloader = MovieDownloader.shared    
     
     @IBOutlet weak var lblAide: UILabel!
-   
+    @IBOutlet weak var lblMode: UILabel!
+    @IBOutlet weak var btnStart: UIButton!
+    
     @IBAction func unwindToStart(unwindSegue: UIStoryboardSegue) {}
     
     @IBAction func btnStart(_ sender: Any) {}
@@ -28,8 +30,10 @@ class MovieStartVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        lblMode.text = "Mode [ Titre de film ]"
+        lblAide.text = "Aide: année, réalisateur, genre, ..."
+        btnStart.setTitle("COMMENCER", for: .normal)
+       
         print("MovieStartView did load")
     }
 

@@ -13,7 +13,9 @@ class WordStartVC: UIViewController {
     var wordDownloader = WordDownloader.shared
     
     @IBOutlet weak var lblAide: UILabel!
-   
+    @IBOutlet weak var lblMode: UILabel!
+    @IBOutlet weak var btnStart: UIButton!
+    
     @IBAction func unwindToStart(unwindSegue: UIStoryboardSegue) {}
     
     @IBAction func btnStart(_ sender: Any) {}
@@ -28,15 +30,18 @@ class WordStartVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        print("WordStartView did load")
+        print("MovieStartView did load")
+        
+        lblMode.text = "Mode [ Mot du dictionnaire anglais ]"
+        lblAide.text = "Aide: Le mot"
+        btnStart.setTitle("COMMENCER", for: .normal)
     }
+
 
     override func viewWillAppear(_ animated: Bool) {
         print ("WordStartView will appear")
-
-        hangmanGame.fetch(usingWordDownloader: false) { success in
+    
+        hangmanGame.fetch(usingWordDownloader: true) { success in
             if success {
                 // Success handling
                 DispatchQueue.main.async {
@@ -52,18 +57,20 @@ class WordStartVC: UIViewController {
             }
         }
     }
+
     
     override func viewDidAppear(_ animated: Bool) {
-        print ("WordStartView did appear")
+        print ("MovieStartView did appear")
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        print ("WordStartView will disappear")
+        print ("MovieStartView will disappear")
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        print ("WordStartView did disappear")
+        print ("MovieStartView did disappear")
     }
 
 }
+
 

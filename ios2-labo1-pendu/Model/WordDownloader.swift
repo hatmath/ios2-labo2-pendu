@@ -12,7 +12,7 @@ class WordDownloader {
     static let shared = WordDownloader()
     private init() {}
 
-    func fetchRandoWord(completion: @escaping (Result<String, Error>) -> Void) {
+    func fetchRandomWord(completion: @escaping (Result<String, Error>) -> Void) {
         let apiUrl = URL(string: "https://random-word-api.herokuapp.com/word?length=9")!
         
         let task = URLSession.shared.dataTask(with: apiUrl) { data, response, error in
@@ -27,12 +27,14 @@ class WordDownloader {
             }
             
             do {
-                if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String],
-                   let randomWord = json.first {
+                let decoder = JSONDecoder()
+                let randomWords = try decoder.decode([String].self, from: data)
+                if let randomWord = randomWords.first {
+                    self.currentWord = randomWord
                     completion(.success(randomWord))
-                    self.printReceivedWord(randomWord) // Print the received word
+                    self.printReceivedWord(randomWord)
                 } else {
-                    completion(.failure(NSError(domain: "com.random-word-api", code: -2, userInfo: nil)))
+                     completion(.failure(NSError(domain: "com.random-word-api", code: -2, userInfo: nil)))
                 }
             } catch {
                 completion(.failure(error))
@@ -43,7 +45,7 @@ class WordDownloader {
     }
     
     private func printReceivedWord(_ word: String) {
-        print("Received word: \(word)")
+        print("Mot reçu: \(word)")
     }
     func getCurrentWord() -> String? {
         return self.currentWord
