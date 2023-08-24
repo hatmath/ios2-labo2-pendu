@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MovieVC: UIViewController {
+class GameVC: UIViewController {
 
     @IBOutlet weak var txtFieldUneLettre: UITextField!
     @IBOutlet weak var txtFieldLesLettres: UITextField!
@@ -17,10 +17,10 @@ class MovieVC: UIViewController {
     @IBOutlet weak var lblPointage: UILabel!
     @IBOutlet weak var btnRejouer: UIButton!
     @IBOutlet weak var lblBravo: UILabel!
-    
-//    var hangmanGameCopy: HangmanGame!
+ 
     var hangmanGame = HangmanGame.shared
-    var movieDownloader = MovieDownloader.shared
+    var gameMode: Int?
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,11 +67,8 @@ class MovieVC: UIViewController {
                 txtFieldLesLettres.text = hangmanGame.getSelectedLetters().sorted().map { String($0) }.joined(separator: ", ")
                 lblPointage.text = "Pointage: \(hangmanGame.getIncorrectGuessCount())/\(hangmanGame.getNumberOfGuess() )"
                 lblDevinette.text = hangmanGame.getGuessedWord()
-
-                if movieDownloader.getCurrentMovie() != nil {
-                    lblBravo.text = hangmanGame.getAHint(aMovie: movieDownloader.getCurrentMovie()!)
-                }
-                                                     
+                lblBravo.text = hangmanGame.getAHint()
+                                                                     
                 if hangmanGame.isWordGuessed() {
                     // update UI
                     lblBravo.text = "BRAVO !!"

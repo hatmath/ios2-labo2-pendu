@@ -14,12 +14,15 @@ class HangmanGame {
     private var incorrectGuessCount = 0
     private var selectedLetters: Set<Character> = []
     private var numberOfGuess = 7
+    private var usingWordDownloader: Bool?
     
     static let shared = HangmanGame()
+ 
     private init() {}
     
     func fetch(usingWordDownloader: Bool, completion: @escaping (Bool) -> Void) {
         if usingWordDownloader {
+            self.usingWordDownloader = true
             WordDownloader.shared.fetchRandomWord { result in
                 switch result {
                 case .success(let item):
@@ -35,6 +38,7 @@ class HangmanGame {
                 }
             }
         } else {
+            self.usingWordDownloader = false
             MovieDownloader.shared.fetchRandomMovie { result in
                 switch result {
                 case .success(let item):
@@ -71,37 +75,44 @@ class HangmanGame {
         }
     }
     
-    func getAHint(aMovie: Movie) -> String {
-        switch self.getIncorrectGuessCount() {
-        case 0:
-            return "Aucun indice pour l'instant"
-        case 1:
-            return "Un indice s'en vient"
-        case 2:
-            return """
-            Indice:
-            Année de production: \(aMovie.Released)
-            """
-        case 3:
-            return "Aucun indice pour l'instant"
-        case 4:
-            return """
-            Indices:
-            Classé: \(aMovie.Rated)
-            Genre: \(aMovie.Genre)
-            """
-        case 5:
-            return """
-            Indices
-            Réalisateur(s): \(aMovie.Director)
-            Acteur(s): \(aMovie.Actors)
-            """
-        case 6:
-            return "Vous avez utilisé tout vos indices"
-        case 7:
-            return "Vous avez utilisé tout vos indices"
-        default:
-            return "Aucun indice"
+    func getAHint() -> String {
+        if usingWordDownloader != nil && usingWordDownloader == false {
+            if let movie = MovieDownloader.shared.getCurrentMovie() {
+                switch self.getIncorrectGuessCount() {
+                case 0:
+                    return "Aucun indice pour l'instant"
+                case 1:
+                    return "Un indice s'en vient"
+                case 2:
+                    return """
+                    Indice:
+                    Année de production: \(movie.Released)
+                    """
+                case 3:
+                    return "Aucun indice pour l'instant"
+                case 4:
+                    return """
+                    Indices:
+                    Classé: \(movie.Rated)
+                    Genre: \(movie.Genre)
+                    """
+                case 5:
+                    return """
+                    Indices
+                    Réalisateur(s): \(movie.Director)
+                    Acteur(s): \(movie.Actors)
+                    """
+                case 6:
+                    return "Vous avez utilisé tout vos indices"
+                case 7:
+                    return "Vous avez utilisé tout vos indices"
+                default:
+                    return "Aucun indice"
+                }
+            }
+            return ""
+        } else {
+            return ""
         }
     }
     

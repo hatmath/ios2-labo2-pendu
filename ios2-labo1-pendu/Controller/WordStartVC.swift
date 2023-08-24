@@ -18,15 +18,12 @@ class WordStartVC: UIViewController {
     
     @IBAction func unwindToStart(unwindSegue: UIStoryboardSegue) {}
     
-    @IBAction func btnStart(_ sender: Any) {}
-    //Pour passer un objet d'une vue à une autre voici un exemple de code *conserver pour l'instant*
-    //
-    //@IBAction func btnStart(_ sender: Any) {
-    //    let controller = storyboard?.instantiateViewController(identifier: "MovieVC") as! MovieVC
-    //    controller.hangmanGame = hangmanGame
-    //    controller.modalPresentationStyle = .fullScreen
-    //    present(controller, animated: true, completion: nil)
-    //}
+    @IBAction func btnStart(_ sender: Any) {
+        let controller = storyboard?.instantiateViewController(identifier: "storyboard_Id_game") as! GameVC
+        controller.gameMode = 2
+        controller.modalPresentationStyle = .fullScreen
+        present(controller, animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

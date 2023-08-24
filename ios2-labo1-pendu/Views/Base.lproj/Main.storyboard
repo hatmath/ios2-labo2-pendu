@@ -12,13 +12,13 @@
         <!--MovieView-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="MovieVC" title="MovieView" id="BYZ-38-t0r" customClass="MovieVC" customModule="ios2_labo1_pendu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="storyboard_Id_game" title="MovieView" id="BYZ-38-t0r" customClass="GameVC" customModule="ios2_labo1_pendu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2BN-uw-kBY" userLabel="StackViewUneLettre">
-                                <rect key="frame" x="46.666666666666657" y="179" width="300" height="36"/>
+                                <rect key="frame" x="46.666666666666657" y="135" width="300" height="36"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entrez une lettre:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HF1-GW-3md" userLabel="LabelUserInput">
                                         <rect key="frame" x="0.0" y="0.0" width="130.33333333333334" height="36"/>
@@ -55,7 +55,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jeux du pendu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xts-Qf-MRk" userLabel="AppTitle">
-                                <rect key="frame" x="116.66666666666669" y="119" width="160" height="30"/>
+                                <rect key="frame" x="116.66666666666669" y="75" width="160" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="T9e-b5-uw3"/>
                                     <constraint firstAttribute="height" constant="30" id="g4o-dd-yfe"/>
@@ -65,7 +65,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="quN-7D-pms" userLabel="StackViewLettres">
-                                <rect key="frame" x="46.666666666666657" y="255" width="300" height="65"/>
+                                <rect key="frame" x="46.666666666666657" y="211" width="300" height="65"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lettres utilisées:                               " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BNl-3g-jGE" userLabel="LabelUserInput">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="20.333333333333332"/>
@@ -74,7 +74,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fuj-mt-lk7" userLabel="UserInput">
-                                        <rect key="frame" x="0.0" y="30.333333333333311" width="300" height="34.666666666666657"/>
+                                        <rect key="frame" x="0.0" y="30.333333333333339" width="300" height="34.666666666666657"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -85,7 +85,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JGI-Ew-fVK" userLabel="StackViewPendu">
-                                <rect key="frame" x="76.666666666666686" y="422" width="240" height="160"/>
+                                <rect key="frame" x="76.666666666666686" y="378" width="240" height="160"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UXD-ky-MFB" userLabel="LabelPointage">
                                         <rect key="frame" x="94.999999999999986" y="0.0" width="50.000000000000014" height="22"/>
@@ -107,7 +107,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="###" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nc7-r6-gOM" userLabel="Devinette">
-                                <rect key="frame" x="16.666666666666657" y="356" width="360" height="30"/>
+                                <rect key="frame" x="16.666666666666657" y="312" width="360" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="360" id="1fA-PL-qAZ"/>
                                     <constraint firstAttribute="height" constant="30" id="Nry-qw-mfP"/>
@@ -117,7 +117,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Gj-gq-0Nj">
-                                <rect key="frame" x="155.66666666666666" y="612" width="82" height="40"/>
+                                <rect key="frame" x="155.66666666666666" y="568" width="82" height="40"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="eTU-KL-AqO"/>
@@ -132,7 +132,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BRAVO !!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZdP-OT-Oxd">
-                                <rect key="frame" x="8" y="660" width="377" height="101"/>
+                                <rect key="frame" x="8" y="616" width="377" height="194"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -178,10 +178,10 @@
             </objects>
             <point key="canvasLocation" x="408" y="-680"/>
         </scene>
-        <!--MovieEndView-->
+        <!--GameEndView-->
         <scene sceneID="wSv-Fr-pix">
             <objects>
-                <viewController title="MovieEndView" id="GVy-hX-gZF" customClass="MovieEndVC" customModule="ios2_labo1_pendu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="GameEndView" id="GVy-hX-gZF" customClass="GameEndVC" customModule="ios2_labo1_pendu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HBn-zm-B8f">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -402,7 +402,6 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="btnStart:" destination="TYI-Ha-BrD" eventType="touchUpInside" id="1tg-AQ-LVi"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="W3g-JX-A1m"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lblMode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BKs-od-GeK">
@@ -471,7 +470,6 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="btnStart:" destination="opL-NQ-1q9" eventType="touchUpInside" id="m3k-Uu-X22"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="iPp-Yb-HpI"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lblMode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d88-xn-yRl">
@@ -513,9 +511,6 @@
             <point key="canvasLocation" x="-286" y="11"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="iPp-Yb-HpI"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="0_echafaud" width="819" height="460"/>
         <image name="percent" catalog="system" width="128" height="121"/>
