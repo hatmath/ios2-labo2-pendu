@@ -9,9 +9,38 @@ import UIKit
 
 class GameEndVC: UIViewController {
     
+    @IBOutlet weak var lblMessage: UILabel!
+    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var txtName: UITextField!
+    @IBOutlet weak var btnHome: UIButton!
+    
+    var hangmanGame = HangmanGame.shared
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("MovieEndView did load")
+        if hangmanGame.isWordGuessed() {
+            let mode = hangmanGame.isWordDownloaderMode()! ? "Mot du dictionnaire" : "Titre de film"
+            lblMessage.text =
+                """
+                BRAVO!!
+                Votre score est:
+                \(hangmanGame.getIncorrectGuessCount()) erreur(s) en \(hangmanGame.getNumberOfGuess()) tentatives
+                en mode [ \(mode) ]
+                """
+            lblName.text =
+                """
+                Entrer votre nom
+                pour sauvegarder votre score
+                """
+            txtName.text = ""
+        } else {
+            lblMessage.text = "Meilleure chance la prochaine fois"
+            lblName.text = ""
+            txtName.isHidden = true
+        }
+ 
+        btnHome.setTitle("ACCUEIL", for: .normal)
     }
 
     override func viewWillAppear(_ animated: Bool) {
