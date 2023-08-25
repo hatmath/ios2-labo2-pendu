@@ -1,5 +1,5 @@
 //
-//  MovieEndVC.swift
+//  GameEndVC.swift
 //  ios2-labo2-pendu
 //
 //  Created by Simon Turcotte (2395412) et Mathieu Hatin (2296939)
@@ -44,7 +44,7 @@ class GameEndVC: UIViewController {
     }
     
     @IBAction func btnHomeTapped(_ sender: Any) {
-        saveScore()
+        saveScore()  
         let controller = storyboard?.instantiateViewController(identifier: "id_HomeTabBar") as! UITabBarController
          controller.modalPresentationStyle = .fullScreen
          present(controller, animated: true, completion: nil)
@@ -56,8 +56,6 @@ class GameEndVC: UIViewController {
                 let player: String = txtName.text!
                 let mode: Int = hangmanGame.isWordDownloaderMode()! ? 1 : 2
                 let score: Int = hangmanGame.getIncorrectGuessCount()
-                
-                // Create and save a score
                 Score.shared.createAndSaveScore(user: player, mode: mode, score: score)
             }
         }

@@ -1,8 +1,8 @@
 //
-//  SaveScore.swift
-//  ios2-labo1-pendu
+//  Score.swift
+//  ios2-labo2-pendu
 //
-//  Created by Mathieu Hatin (Étudiant) on 2023-08-24.
+//  Created by Simon Turcotte (2395412) et Mathieu Hatin (2296939)
 //
 
 import Foundation
@@ -10,7 +10,7 @@ import Foundation
 import Foundation
 
 class Score {
-    static let shared = Score() // Singleton instance
+    static let shared = Score()
     
     private let userDefaults = UserDefaults.standard
     
@@ -81,7 +81,7 @@ class Score {
         
         for score in savedScores {
             if let existingBestScore = bestScoresByUser[score.user] {
-                if score.score > existingBestScore.score {
+                if score.score < existingBestScore.score {
                     bestScoresByUser[score.user] = score
                 }
             } else {
@@ -106,7 +106,7 @@ class Score {
         
         for score in savedScores {
             if let existingBestScore = bestScoresByUser[score.user] {
-                if score.score > existingBestScore.score {
+                if score.score < existingBestScore.score {
                     bestScoresByUser[score.user] = score
                 }
             } else {
@@ -134,4 +134,5 @@ class Score {
     func synchronize() {
         userDefaults.synchronize()
     }
+    
 }

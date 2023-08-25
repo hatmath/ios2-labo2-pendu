@@ -26,11 +26,10 @@ class MovieStartVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("MovieStartView did load")
         lblMode.text = "Mode [ Titre de film ]"
         lblAide.text = "Aide: année, réalisateur, genre, ..."
-        btnStart.setTitle("COMMENCER", for: .normal)
-       
-        print("MovieStartView did load")
+        btnStart.setTitle("COMMENCER", for: .normal)        
     }
 
     override func viewWillAppear(_ animated: Bool) {

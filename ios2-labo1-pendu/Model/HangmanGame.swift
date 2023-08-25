@@ -55,6 +55,7 @@ class HangmanGame {
             }
         }
         selectedLetters = []
+        incorrectGuessCount = 0
     }
     
     func isWordDownloaderMode() -> Bool? {
@@ -174,7 +175,7 @@ class HangmanGame {
         default:
             return "7_final"
         }
-        
     }
+    
 }
 

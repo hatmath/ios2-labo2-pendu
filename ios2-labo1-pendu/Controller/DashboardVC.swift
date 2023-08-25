@@ -15,8 +15,7 @@ class DashboardVC: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        print ("DashboardView will appear")
-
+        print ("DashboardView will appear")        
     }
     
     override func viewDidAppear(_ animated: Bool) {

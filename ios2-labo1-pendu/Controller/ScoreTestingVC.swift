@@ -1,8 +1,8 @@
 //
 //  ScoreTestingVC.swift
-//  ios2-labo1-pendu
+//  ios2-labo2-pendu
 //
-//  Created by Mathieu Hatin (Étudiant) on 2023-08-24.
+//  Created by Simon Turcotte (2395412) et Mathieu Hatin (2296939)
 //
 
 import UIKit
@@ -27,6 +27,7 @@ class ScoreTestingVC: UIViewController {
                 if score != "" {
                     // Create and save a score
                     Score.shared.createAndSaveScore(user: player!, mode: Int(mode!)!, score: Int(score!)!)
+                    
                     lblMessage.textColor = UIColor.blue
                     msg = "Pointage enregistré"
                     txtPlayer.text = ""
@@ -41,9 +42,7 @@ class ScoreTestingVC: UIViewController {
         } else {
             msg = "Aucun joueur"
         }
-        
-        lblMessage.text = msg
-        
+        lblMessage.text = msg        
     }
     
     @IBAction func eraseAllPush(_ sender: Any) {

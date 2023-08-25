@@ -1,8 +1,8 @@
 //
 //  WordDownloader.swift
-//  ios2-labo1-pendu
+//  ios2-labo2-pendu
 //
-//  Created by Mathieu Hatin (Étudiant) on 2023-08-21.
+//  Created by Simon Turcotte (2395412) et Mathieu Hatin (2296939)
 //
 
 import Foundation
@@ -50,6 +50,5 @@ class WordDownloader {
     func getCurrentWord() -> String? {
         return self.currentWord
     }
-
     
 }
