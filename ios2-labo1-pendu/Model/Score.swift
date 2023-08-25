@@ -99,6 +99,33 @@ class Score {
         return bestScoresString
     }
     
+    func getBestScoresByUserAsStringFrenchAndFormat() -> String {
+        let savedScores = scores
+        
+        var bestScoresByUser = [String: ScoreData]()
+        
+        for score in savedScores {
+            if let existingBestScore = bestScoresByUser[score.user] {
+                if score.score > existingBestScore.score {
+                    bestScoresByUser[score.user] = score
+                }
+            } else {
+                bestScoresByUser[score.user] = score
+            }
+        }
+        
+        var bestScoresString = "Joueur\t\t\tMode(1-2)\t\tPointage (0-6)\n"
+        
+        for (_, bestScore) in bestScoresByUser {
+            let paddedString = bestScore.user.padding(toLength: 12, withPad: "_", startingAt: 0)
+            let scoreString = "\(paddedString)\t\t\t\(bestScore.mode)\t\t\t\(bestScore.score)\n"
+            bestScoresString.append(scoreString)
+        }
+        bestScoresString.append("\nmode 1: Mot du dictionnaire anglais\n")
+        bestScoresString.append("mode 2: Titre de film\n")
+        return bestScoresString
+    }
+    
     func eraseAllScores() {
         scores = []
         synchronize()

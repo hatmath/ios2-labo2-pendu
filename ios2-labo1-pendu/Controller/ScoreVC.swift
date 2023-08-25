@@ -18,9 +18,9 @@ class ScoreVC: UIViewController {
     
     func showScore() {
         // Get best scores by user as a multiline string and print to screen
-        let bestScoresString = Score.shared.getBestScoresByUserAsString()
+//        let bestScoresString = Score.shared.getBestScoresByUserAsString()
+        let bestScoresString = Score.shared.getBestScoresByUserAsStringFrenchAndFormat()
         lblScore.text = bestScoresString
-//        lblScore.text?.append(bestScoresString)
     }
     
     override func viewWillAppear(_ animated: Bool) {

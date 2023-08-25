@@ -20,13 +20,18 @@ class ScoreTestingVC: UIViewController {
         let player: String? = txtPlayer.text
         let mode: String? = txtMode.text
         let score: String? = txtScore.text
+        lblMessage.textColor = UIColor.red
         
         if player != "" {
             if mode != "" {
                 if score != "" {
                     // Create and save a score
                     Score.shared.createAndSaveScore(user: player!, mode: Int(mode!)!, score: Int(score!)!)
+                    lblMessage.textColor = UIColor.blue
                     msg = "Pointage enregistré"
+                    txtPlayer.text = ""
+                    txtMode.text = ""
+                    txtScore.text = ""
                 } else {
                     msg = "Aucun pointage"
                 }
@@ -44,6 +49,8 @@ class ScoreTestingVC: UIViewController {
     @IBAction func eraseAllPush(_ sender: Any) {
         // Erase all scores
         Score.shared.eraseAllScores()
+        lblMessage.textColor = UIColor.blue
+        lblMessage.text = "Pointages effacés"
     }
     
     override func viewDidLoad() {
