@@ -121,8 +121,8 @@ class Score {
             let scoreString = "\(paddedString)\t\t\t\(bestScore.mode)\t\t\t\(bestScore.score)\n"
             bestScoresString.append(scoreString)
         }
-        bestScoresString.append("\nmode 1: Mot du dictionnaire anglais\n")
-        bestScoresString.append("mode 2: Titre de film\n")
+        bestScoresString.append("\nMode 1: Mot du dictionnaire anglais\n")
+        bestScoresString.append("Mode 2: Titre de film\n")
         return bestScoresString
     }
     

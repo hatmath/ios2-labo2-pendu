@@ -54,6 +54,7 @@ class HangmanGame {
                 }
             }
         }
+        selectedLetters = []
     }
     
     func isWordDownloaderMode() -> Bool? {
@@ -120,8 +121,16 @@ class HangmanGame {
         }
     }
     
+    func compareCharacterArraysIgnoringSpaces(_ array1: [Character], _ array2: [Character]) -> Bool {
+        let string1 = String(array1.filter { $0 != "_" })
+        let string2 = String(array2.filter { $0 != " " })
+        print(string1)
+        print(string2)
+        return string1 == string2
+    }
+    
     func isWordGuessed() -> Bool {
-        return guessedWord == Array(word)
+        return compareCharacterArraysIgnoringSpaces(guessedWord,Array(word))
     }
     
     func isGameOver() -> Bool {

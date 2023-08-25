@@ -51,9 +51,15 @@ class GameEndVC: UIViewController {
     }
     
     func saveScore() {
-        if txtName.text != "" {
-            let defaults = UserDefaults.standard
-            defaults.set(hangmanGame.getIncorrectGuessCount(), forKey: txtName.text!)
+        if hangmanGame.isWordGuessed() {
+            if txtName.text != "" {
+                let player: String = txtName.text!
+                let mode: Int = hangmanGame.isWordDownloaderMode()! ? 1 : 2
+                let score: Int = hangmanGame.getIncorrectGuessCount()
+                
+                // Create and save a score
+                Score.shared.createAndSaveScore(user: player, mode: mode, score: score)
+            }
         }
     }
 
