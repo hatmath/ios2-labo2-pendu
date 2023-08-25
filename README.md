@@ -62,4 +62,4 @@
 	Respect du modèle MVC													10
 	Qualités du code et de la app												15
 
-# BUG À CORRIGER AVANT LA REMISE
+# BUG À CORRIGER
