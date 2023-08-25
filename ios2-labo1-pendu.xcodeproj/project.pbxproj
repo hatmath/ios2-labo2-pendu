@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		37E7EAC12A967A5F00C2F654 /* WordStartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E7EAC02A967A5F00C2F654 /* WordStartVC.swift */; };
-		8714168B2A965FF400DF775F /* UserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8714168A2A965FF400DF775F /* UserVC.swift */; };
 		8718FEA62A91B3680073EEE2 /* MovieStartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8718FEA52A91B3680073EEE2 /* MovieStartVC.swift */; };
 		8718FEA82A91BA1D0073EEE2 /* GameEndVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8718FEA72A91BA1D0073EEE2 /* GameEndVC.swift */; };
 		872A9F612A82B9FE00815AEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A9F602A82B9FE00815AEB /* AppDelegate.swift */; };
@@ -22,11 +21,11 @@
 		874EAB942A898CA900F5C4CC /* MovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874EAB932A898CA900F5C4CC /* MovieList.swift */; };
 		874FD4282A939901009C091F /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874FD4272A939901009C091F /* DashboardVC.swift */; };
 		874FD42A2A943F5F009C091F /* WordDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874FD4292A943F5F009C091F /* WordDownloader.swift */; };
+		879313682A979D6100C7FF69 /* ScoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879313672A979D6100C7FF69 /* ScoreVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		37E7EAC02A967A5F00C2F654 /* WordStartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordStartVC.swift; sourceTree = "<group>"; };
-		8714168A2A965FF400DF775F /* UserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserVC.swift; sourceTree = "<group>"; };
 		8718FEA52A91B3680073EEE2 /* MovieStartVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieStartVC.swift; sourceTree = "<group>"; };
 		8718FEA72A91BA1D0073EEE2 /* GameEndVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEndVC.swift; sourceTree = "<group>"; };
 		872A9F5D2A82B9FE00815AEB /* ios2-labo1-pendu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios2-labo1-pendu.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,6 +41,7 @@
 		874EAB932A898CA900F5C4CC /* MovieList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieList.swift; sourceTree = "<group>"; };
 		874FD4272A939901009C091F /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
 		874FD4292A943F5F009C091F /* WordDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDownloader.swift; sourceTree = "<group>"; };
+		879313672A979D6100C7FF69 /* ScoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,8 +111,8 @@
 				872A9F642A82B9FE00815AEB /* GameVC.swift */,
 				8718FEA72A91BA1D0073EEE2 /* GameEndVC.swift */,
 				874FD4272A939901009C091F /* DashboardVC.swift */,
-				8714168A2A965FF400DF775F /* UserVC.swift */,
 				37E7EAC02A967A5F00C2F654 /* WordStartVC.swift */,
+				879313672A979D6100C7FF69 /* ScoreVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -202,10 +202,10 @@
 				874FD4282A939901009C091F /* DashboardVC.swift in Sources */,
 				874EAB902A898C1700F5C4CC /* HangmanGame.swift in Sources */,
 				37E7EAC12A967A5F00C2F654 /* WordStartVC.swift in Sources */,
+				879313682A979D6100C7FF69 /* ScoreVC.swift in Sources */,
 				874EAB942A898CA900F5C4CC /* MovieList.swift in Sources */,
 				8718FEA62A91B3680073EEE2 /* MovieStartVC.swift in Sources */,
 				872A9F652A82B9FE00815AEB /* GameVC.swift in Sources */,
-				8714168B2A965FF400DF775F /* UserVC.swift in Sources */,
 				872A9F612A82B9FE00815AEB /* AppDelegate.swift in Sources */,
 				8718FEA82A91BA1D0073EEE2 /* GameEndVC.swift in Sources */,
 				872A9F632A82B9FE00815AEB /* SceneDelegate.swift in Sources */,

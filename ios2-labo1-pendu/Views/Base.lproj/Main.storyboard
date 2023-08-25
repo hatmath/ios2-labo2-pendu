@@ -12,7 +12,7 @@
         <!--GameView-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="storyboard_Id_game" title="MovieView" id="BYZ-38-t0r" userLabel="GameView" customClass="GameVC" customModule="ios2_labo1_pendu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="id_GameVC" title="MovieView" id="BYZ-38-t0r" userLabel="GameView" customClass="GameVC" customModule="ios2_labo1_pendu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -138,7 +138,6 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="pushRejouer:" destination="BYZ-38-t0r" eventType="touchDown" id="e3Y-Qe-yda"/>
-                                    <segue destination="GVy-hX-gZF" kind="presentation" id="Guv-5j-pcX"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lblMessage" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZdP-OT-Oxd">
@@ -191,13 +190,13 @@
         <!--GameEndView-->
         <scene sceneID="wSv-Fr-pix">
             <objects>
-                <viewController storyboardIdentifier="storyboard_id_end" title="GameEndView" id="GVy-hX-gZF" customClass="GameEndVC" customModule="ios2_labo1_pendu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="id_GameEndVC" title="GameEndView" id="GVy-hX-gZF" customClass="GameEndVC" customModule="ios2_labo1_pendu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HBn-zm-B8f">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lblMessage" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pn0-yE-Vew">
-                                <rect key="frame" x="8" y="164" width="377" height="170"/>
+                                <rect key="frame" x="8" y="169" width="377" height="170"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="170" id="CMt-be-dkg"/>
                                 </constraints>
@@ -206,7 +205,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="txtName" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uKx-qu-H8U">
-                                <rect key="frame" x="148" y="404" width="97" height="34"/>
+                                <rect key="frame" x="148" y="409" width="97" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="ZDG-by-IG9"/>
                                 </constraints>
@@ -214,7 +213,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ucn-eg-yVa">
-                                <rect key="frame" x="136.33333333333334" y="782" width="120.66666666666666" height="40"/>
+                                <rect key="frame" x="136.33333333333334" y="758" width="120.66666666666666" height="40"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="sGp-h9-v2a"/>
@@ -224,9 +223,12 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="btnHomeTapped:" destination="GVy-hX-gZF" eventType="touchUpInside" id="1vj-gf-SwT"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lblName" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kPQ-MG-tFo">
-                                <rect key="frame" x="8" y="336" width="377" height="60"/>
+                                <rect key="frame" x="8" y="341" width="377" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="ARj-pl-ftb"/>
                                 </constraints>
@@ -270,7 +272,7 @@
         <!--HomeTabBar-->
         <scene sceneID="6pm-6N-EkG">
             <objects>
-                <tabBarController storyboardIdentifier="tabbar_id" title="HomeTabBar" id="XbM-54-Flc" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="id_HomeTabBar" title="HomeTabBar" id="XbM-54-Flc" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="zvM-h7-XFA"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ub7-c3-r9K">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
@@ -367,8 +369,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Préférences" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K30-Db-YlG">
-                                <rect key="frame" x="135" y="406.66666666666669" width="123" height="29"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aucune Préférence" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K30-Db-YlG">
+                                <rect key="frame" x="141" y="392.33333333333331" width="111.33333333333331" height="57.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -409,7 +411,7 @@
         <!--MovieStartView-->
         <scene sceneID="f8Z-vA-31F">
             <objects>
-                <viewController title="MovieStartView" id="TYI-Ha-BrD" customClass="MovieStartVC" customModule="ios2_labo1_pendu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="id_MovieStartVC" title="MovieStartView" id="TYI-Ha-BrD" customClass="MovieStartVC" customModule="ios2_labo1_pendu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3iK-HR-EyV">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -478,7 +480,7 @@
         <!--WordStartView-->
         <scene sceneID="MpH-aC-LU5">
             <objects>
-                <viewController title="WordStartView" id="opL-NQ-1q9" customClass="WordStartVC" customModule="ios2_labo1_pendu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="id_WordStartVC" title="WordStartView" id="opL-NQ-1q9" customClass="WordStartVC" customModule="ios2_labo1_pendu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GwF-OT-txf">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -547,14 +549,31 @@
         <!--ScoreView-->
         <scene sceneID="IfL-8z-kea">
             <objects>
-                <viewController title="ScoreView" id="fUx-Ly-2C4" sceneMemberID="viewController">
+                <viewController title="ScoreView" id="fUx-Ly-2C4" customClass="ScoreVC" customModule="ios2_labo1_pendu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="50y-kl-rqO">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lblScore" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nUc-nw-qBJ">
+                                <rect key="frame" x="8" y="8" width="377" height="826"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="KWf-Bk-Rkm"/>
                         <color key="backgroundColor" red="0.49019610879999997" green="0.7254902124" blue="0.45490196350000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="nUc-nw-qBJ" firstAttribute="leading" secondItem="KWf-Bk-Rkm" secondAttribute="leading" constant="8" id="fwG-jO-3hB"/>
+                            <constraint firstItem="KWf-Bk-Rkm" firstAttribute="bottom" secondItem="nUc-nw-qBJ" secondAttribute="bottom" constant="8" id="kR2-Hc-Iwb"/>
+                            <constraint firstItem="nUc-nw-qBJ" firstAttribute="top" secondItem="KWf-Bk-Rkm" secondAttribute="top" constant="8" id="pw2-NG-kuT"/>
+                            <constraint firstItem="KWf-Bk-Rkm" firstAttribute="trailing" secondItem="nUc-nw-qBJ" secondAttribute="trailing" constant="8" id="qXZ-5k-0kZ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dfa-0z-eRB"/>
+                    <connections>
+                        <outlet property="lblScore" destination="nUc-nw-qBJ" id="L19-yq-acw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rhj-mn-FKR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

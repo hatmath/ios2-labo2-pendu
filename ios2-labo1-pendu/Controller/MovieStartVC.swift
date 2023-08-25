@@ -19,7 +19,7 @@ class MovieStartVC: UIViewController {
     @IBAction func unwindToStart(unwindSegue: UIStoryboardSegue) {}
     
     @IBAction func btnStart(_ sender: Any) {
-        let controller = storyboard?.instantiateViewController(identifier: "storyboard_Id_game") as! GameVC
+        let controller = storyboard?.instantiateViewController(identifier: "id_GameVC") as! GameVC
         controller.modalPresentationStyle = .fullScreen
         present(controller, animated: true, completion: nil)
     }

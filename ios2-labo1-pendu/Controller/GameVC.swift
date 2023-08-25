@@ -16,18 +16,14 @@ class GameVC: UIViewController {
     @IBOutlet weak var imgViewPendu: UIImageView!
     @IBOutlet weak var lblPointage: UILabel!
     @IBOutlet weak var btnRejouer: UIButton!
-//    @IBOutlet weak var lblBravo: UILabel!
- 
     @IBOutlet weak var lblMessage: UILabel!
     
     var hangmanGame = HangmanGame.shared
-    var controller: UIViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         print ("MovieView will appear")
-        
-        // Do any additional setup after loading the view.
+
         txtFieldUneLettre.text = ""
         txtFieldLesLettres.text = ""
         lblPointage.text = ""
@@ -35,15 +31,10 @@ class GameVC: UIViewController {
         lblMessage.text = ""
         imgViewPendu.image = UIImage(named: "0_echafaud")
         lblDevinette.text = hangmanGame.getGuessedWord()
-        
-        controller = storyboard?.instantiateViewController(identifier: "storyboard_id_end") as! GameEndVC
-        controller.modalPresentationStyle = .fullScreen
-       
     }
     
     override func viewWillAppear(_ animated: Bool) {
         print ("MovieView will appear")
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -75,8 +66,9 @@ class GameVC: UIViewController {
                 lblMessage.text = hangmanGame.getAHint()
                                                                      
                  if hangmanGame.isGameOver() || hangmanGame.isWordGuessed() {
-                    print("test")
-                    present(controller, animated: true, completion: nil)
+                    let controller = storyboard?.instantiateViewController(identifier: "id_GameEndVC") as! GameEndVC
+                     controller.modalPresentationStyle = .fullScreen
+                     present(controller, animated: true, completion: nil)
                  }
             }
         }
@@ -85,7 +77,9 @@ class GameVC: UIViewController {
     }
 
     @IBAction func pushRejouer(_ sender: Any) {
-        viewDidLoad()
+       let controller = storyboard?.instantiateViewController(identifier: "id_HomeTabBar") as! UITabBarController
+        controller.modalPresentationStyle = .fullScreen
+        present(controller, animated: true, completion: nil)        
     }
     
 }

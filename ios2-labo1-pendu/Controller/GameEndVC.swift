@@ -19,6 +19,7 @@ class GameEndVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("MovieEndView did load")
+        btnHome.setTitle("ACCUEIL", for: .normal)
         if hangmanGame.isWordGuessed() {
             let mode = hangmanGame.isWordDownloaderMode()! ? "Mot du dictionnaire" : "Titre de film"
             lblMessage.text =
@@ -34,19 +35,30 @@ class GameEndVC: UIViewController {
                 pour sauvegarder votre score
                 """
             txtName.text = ""
-            btnHome.setTitle("ACCUEIL", for: .normal)
         } else {
             lblMessage.text = "Meilleure chance la prochaine fois"
             lblName.text = ""
             txtName.isHidden = true
-            btnHome.isHidden = true
         }
         
     }
+    
+    @IBAction func btnHomeTapped(_ sender: Any) {
+        saveScore()
+        let controller = storyboard?.instantiateViewController(identifier: "id_HomeTabBar") as! UITabBarController
+         controller.modalPresentationStyle = .fullScreen
+         present(controller, animated: true, completion: nil)
+    }
+    
+    func saveScore() {
+        if txtName.text != "" {
+            let defaults = UserDefaults.standard
+            defaults.set(hangmanGame.getIncorrectGuessCount(), forKey: txtName.text!)
+        }
+    }
 
     override func viewWillAppear(_ animated: Bool) {
-        print ("MovieEndView will appear")
-
+        print ("MovieEndView will appear")        
     }
     
     override func viewDidAppear(_ animated: Bool) {
