@@ -1,9 +1,3 @@
-
-# BUG À CORRIGER AVANT LA REMISE
-
-	- Ne pas tenir compte des espaces
-	- Quand le mot est trouvé c'est un succès sinon un échec présentement aucune action conséquente n'est prise
-
 # ENTÊTE
    
     Projet:  LABORATOIRE 2 : LE JEU DU PENDU
@@ -67,3 +61,5 @@
 	Mode administrateur (faire « Score » avec « User Default », « Préférences » est un mock)				15
 	Respect du modèle MVC													10
 	Qualités du code et de la app												15
+
+# BUG À CORRIGER AVANT LA REMISE
