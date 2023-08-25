@@ -13,14 +13,31 @@ class ScoreVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        showScore()
-        
+        print("ScoreView did load")
     }
     
     func showScore() {
-        let defaults = UserDefaults.standard
-        let score = defaults.integer(forKey: "m")
-        lblScore.text = String(score)
+        // Get best scores by user as a multiline string and print to screen
+        let bestScoresString = Score.shared.getBestScoresByUserAsString()
+        lblScore.text = bestScoresString
+//        lblScore.text?.append(bestScoresString)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print ("ScoreView will appear")
+        showScore()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print ("ScoreView did appear")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        print ("ScoreView will disappear")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        print ("ScoreView did disappear")
     }
 
 }
