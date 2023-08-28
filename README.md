@@ -6,9 +6,8 @@
 
 # ÉNONCÉ/DESCRIPTION
 
-	## OBJECTIF
- 
-		Le but de ce laboratoire est de mettre en pratique les notions de navigation. 
+	OBJECTIF
+ 	Le but de ce laboratoire est de mettre en pratique les notions de navigation. 
 	
 	ÉVALUATION
 	Le laboratoire est noté selon la qualité du code et du projet avec le barème ci-dessous. 
