@@ -3,7 +3,13 @@
     Projet:  LABORATOIRE 2 : LE JEU DU PENDU ET NAVIGATION
     Codeurs: Simon Turcotte (2395412) et Mathieu Hatin (2296939)
     Cours : DÉVELOPPEMENT D'APPLICATIONS MOBILES SOUS IOS 2 (420-292-AH)
+    
+# BUG À CORRIGER AVANT LA REMISE SUIVANTE
 
+	- Ne pas pouvoir entrer plusieurs lettres d'un coup
+ 	- Ne plus pouvoir écrire dans les lettres utilisée
+  	- Les espaces et les chiffres devrait être fourni
+   
 # ÉNONCÉ/DESCRIPTION
 
 	OBJECTIF
