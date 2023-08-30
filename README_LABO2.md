@@ -68,4 +68,13 @@
 	Respect du modèle MVC													10
 	Qualités du code et de la app												15
 
-# BUG À CORRIGER
+# NOTE ET CORRECTION
+
+	Laboratoire 02 (30%)
+	Note remise le 2023-08-29	
+ 	10/10 (30%)
+	Moyenne	5.7/10
+	
+	Antoine Moevus a laissé le commentaire suivant:
+	Vraiment très bien. Des choses intéressantes.J'ai eu quelques bogues mais rien de grave. (écrit le 29 août)
+
